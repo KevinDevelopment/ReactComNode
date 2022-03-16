@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('rede', 'root', '12345',{
-    host:"localhost",
-    dialect:"mysql"
+const sequelize = new Sequelize('rede', 'root', '12345', {
+    host: "localhost",
+    dialect: "mysql"
 })
 
 sequelize.authenticate().then(() => {
@@ -36,4 +36,14 @@ const Postagens = sequelize.define('posts', {
 
 });
 
-Postagens.sync({force:true})
+Postagens.create({
+    nome: 'teste',
+    email: 'teste@teste.com.br',
+    liguagen: 'java',
+    bebida: 'cafe',
+    sociais: 'Instagram',
+    descricao: 'testeAPI'
+})
+
+
+
